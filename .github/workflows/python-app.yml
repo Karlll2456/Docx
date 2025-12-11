@@ -37,3 +37,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
+    - name: Execute Python script
+      run: |
+        python create_document.py
+    - name: Upload generated document
+      uses: actions/upload-artifact@v3
+      with:
+        name: exemplo-docx
+        path: exemplo.docx
