@@ -34,9 +34,11 @@ pip install python-docx
 python create_document.py
 ```
 
+O arquivo `exemplo.docx` será criado **no mesmo diretório** onde você executou o script.
+
 ## 📄 O que o script faz
 
-O script `create_document.py` cria um documento Word de exemplo chamado `exemplo.docx` que inclui:
+O script `create_document.py` cria um documento Word de exemplo chamado `exemplo.docx` **no diretório atual** que inclui:
 
 - ✅ Título centralizado
 - ✅ Parágrafos com texto formatado (negrito, itálico, cores)
@@ -51,8 +53,10 @@ Docx/
 ├── create_document.py   # Script principal para criar documentos
 ├── requirements.txt      # Dependências do projeto
 ├── README.md            # Este arquivo
-└── exemplo.docx         # Documento gerado (após execução)
+└── exemplo.docx         # Documento gerado (após execução, no diretório local)
 ```
+
+**Nota:** O arquivo `exemplo.docx` não aparece no repositório Git pois está no `.gitignore`. Ele é criado localmente quando você executa o script.
 
 ## 🛠️ Personalização
 

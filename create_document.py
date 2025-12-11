@@ -4,6 +4,7 @@ Autor: Gerado automaticamente
 Data: 2025-12-11
 """
 
+import os
 import sys
 
 # Verificar se a biblioteca python-docx está instalada
@@ -95,7 +96,13 @@ def criar_documento():
         # Salvar o documento
         nome_arquivo = 'exemplo.docx'
         doc.save(nome_arquivo)
+        
+        # Obter o caminho completo do arquivo
+        caminho_completo = os.path.abspath(nome_arquivo)
+        
         print(f'✓ Documento "{nome_arquivo}" criado com sucesso!')
+        print(f'📁 Localização: {caminho_completo}')
+        print(f'\nO arquivo está no diretório atual e pode ser aberto com o Microsoft Word ou outro leitor de DOCX.')
         
         return nome_arquivo
         
