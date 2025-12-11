@@ -20,6 +20,7 @@ except ImportError:
     print('  pip3 install python-docx')
     sys.exit(1)
 
+
 def criar_documento():
     """
     Cria um documento DOCX com conteúdo de exemplo
