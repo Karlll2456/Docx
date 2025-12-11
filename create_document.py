@@ -4,9 +4,21 @@ Autor: Gerado automaticamente
 Data: 2025-12-11
 """
 
-from docx import Document
-from docx.shared import Inches, Pt, RGBColor
-from docx.enum.text import WD_ALIGN_PARAGRAPH
+import sys
+
+# Verificar se a biblioteca python-docx está instalada
+try:
+    from docx import Document
+    from docx.shared import Inches, Pt, RGBColor
+    from docx.enum.text import WD_ALIGN_PARAGRAPH
+except ImportError:
+    print('✗ Erro: A biblioteca python-docx não está instalada!')
+    print('\nPara instalar, execute um dos seguintes comandos:')
+    print('  pip install python-docx')
+    print('  pip install -r requirements.txt')
+    print('\nEm sistemas Linux/Mac, talvez seja necessário usar pip3:')
+    print('  pip3 install python-docx')
+    sys.exit(1)
 
 def criar_documento():
     """
@@ -88,6 +100,10 @@ def criar_documento():
         
     except Exception as e:
         print(f'✗ Erro ao criar o documento: {str(e)}')
+        print('\nDicas para resolver problemas:')
+        print('1. Certifique-se de que a biblioteca python-docx está instalada')
+        print('2. Verifique se você tem permissão de escrita no diretório atual')
+        print('3. Confira se há espaço disponível em disco')
         return None
 
 if __name__ == '__main__':
