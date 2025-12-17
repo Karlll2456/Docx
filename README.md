@@ -1,6 +1,6 @@
 # Gerador de Documentos DOCX
 
-Este projeto contém um script Python que cria documentos do Microsoft Word (.docx) de forma programática.
+Este projeto contém scripts Python que criam documentos do Microsoft Word (.docx) de forma programática.
 
 ## 📋 Pré-requisitos
 
@@ -28,41 +28,97 @@ Ou instale diretamente:
 pip install python-docx
 ```
 
-### 3. Execute o script
+### 3. Execute o script desejado
 
+**Para gerar um parecer técnico:**
 ```bash
 python create_document.py
 ```
 
-## 📄 O que o script faz
+**Para gerar a pesquisa sobre IBGE e APM:**
+```bash
+python create_ibge_research.py
+```
 
-O script `create_document.py` cria um documento Word de exemplo chamado `exemplo.docx` que inclui:
+## 📄 Scripts Disponíveis
 
-- ✅ Título centralizado
-- ✅ Parágrafos com texto formatado (negrito, itálico, cores)
-- ✅ Listas com marcadores
-- ✅ Tabelas com dados
-- ✅ Múltiplas seções com subtítulos
+### 1. create_document.py - Parecer Técnico
+
+Este script cria um documento Word chamado `parecer_tecnico.docx` que inclui:
+
+- ✅ Título: "PARECER TÉCNICO - CRIMES NAS CONTESTAÇÕES"
+- ✅ Cabeçalho com data
+- ✅ Seções: EMENTA, RELATÓRIO, FUNDAMENTAÇÃO, CONCLUSÃO
+- ✅ Formatação: Arial 12, justificado, espaçamento 1.5
+- ✅ Assinatura
+
+**Uso:**
+```bash
+# Com argumentos
+python create_document.py --ementa "..." --relatorio "..." --fundamentacao "..." --conclusao "..."
+
+# Ou via STDIN
+python create_document.py --stdin
+```
+
+### 2. create_ibge_research.py - Pesquisa sobre IBGE e APM
+
+Este script cria um documento Word completo chamado `pesquisa_ibge_apm.docx` com informações sobre:
+
+- ✅ O que é o IBGE (Instituto Brasileiro de Geografia e Estatística)
+- ✅ História e missão do IBGE
+- ✅ Funções e atribuições do instituto
+- ✅ Principais censos e pesquisas
+- ✅ O cargo de Agente de Pesquisas e Mapeamento (APM)
+- ✅ Conteúdo programático completo do concurso para APM
+- ✅ Todas as disciplinas: Português, Matemática, Raciocínio Lógico, Ética, Informática e Geografia
+- ✅ Dicas de preparação para o concurso
+- ✅ Informações sobre remuneração e benefícios
+
+**Uso:**
+```bash
+python create_ibge_research.py
+```
 
 ## 📦 Estrutura do Projeto
 
 ```
 Docx/
-├── create_document.py   # Script principal para criar documentos
-├── requirements.txt      # Dependências do projeto
-├── README.md            # Este arquivo
-└── exemplo.docx         # Documento gerado (após execução)
+├── create_document.py        # Script para criar pareceres técnicos
+├── create_ibge_research.py   # Script para gerar pesquisa sobre IBGE e APM
+├── requirements.txt           # Dependências do projeto
+├── README.md                  # Este arquivo
+├── parecer_tecnico.docx       # Parecer gerado (após execução)
+└── pesquisa_ibge_apm.docx     # Pesquisa gerada (após execução)
 ```
 
 ## 🛠️ Personalização
 
-Você pode modificar o arquivo `create_document.py` para:
+Você pode modificar os scripts Python para:
 
-- Alterar o conteúdo do documento
+- Alterar o conteúdo dos documentos
 - Adicionar mais formatação
 - Incluir imagens
 - Criar diferentes estilos
 - Gerar múltiplos documentos
+- Adaptar para outros tipos de documentos
+
+### Exemplos de Uso
+
+**Parecer Técnico com seções específicas:**
+```bash
+python create_document.py \
+  --ementa "Texto da ementa aqui" \
+  --relatorio "Descrição do relatório" \
+  --fundamentacao "Fundamentação legal" \
+  --conclusao "Conclusão do parecer"
+```
+
+**Pesquisa IBGE/APM:**
+```bash
+python create_ibge_research.py
+# Gera automaticamente um documento completo com toda a pesquisa
+```
 
 ## 📚 Documentação da biblioteca
 
