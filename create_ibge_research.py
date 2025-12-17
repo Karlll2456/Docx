@@ -25,6 +25,9 @@ from docx.shared import Pt, RGBColor
 
 OUTPUT_DOCX = "pesquisa_ibge_apm.docx"
 
+# Informações que podem variar conforme edital
+SALARY_BASE = "R$ 2.676,24"  # Valor aproximado, pode variar conforme edital
+
 
 def _set_run_font(run, size=12, bold=False, color=None):
     """Configura a fonte de um run."""
@@ -443,9 +446,10 @@ def generate_ibge_research_document():
         "Carteira Nacional de Habilitação (CNH) categoria B (desejável)"
     ])
     
-    add_heading(doc, "Remuneração e Benefícios (valores aproximados):", level=2)
+    add_heading(doc, "Remuneração e Benefícios:", level=2)
+    add_paragraph(doc, "Os valores podem variar conforme o edital e políticas vigentes. Valores aproximados:")
     add_bullet_list(doc, [
-        "Salário base: aproximadamente R$ 2.676,24 (pode variar conforme edital)",
+        f"Salário base: aproximadamente {SALARY_BASE}",
         "Auxílio-alimentação",
         "Auxílio-transporte",
         "Férias proporcionais",
